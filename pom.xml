@@ -3,9 +3,15 @@
 
     <modelVersion>4.0.0</modelVersion>
 
+    <parent>
+        <groupId>org.springframework.boot</groupId>
+        <artifactId>spring-boot-dependencies</artifactId>
+        <version>2.0.4.RELEASE</version>
+    </parent>
+
     <groupId>com.chumbok</groupId>
     <artifactId>chumbok-starter-parent</artifactId>
-    <version>1.0.1-SNAPSHOT</version>
+    <version>1.0.1</version>
     <packaging>pom</packaging>
 
     <name>chumbok-starter-parent</name>
@@ -18,7 +24,6 @@
         <maven.compiler.source>${java.version}</maven.compiler.source>
         <maven.compiler.target>${java.version}</maven.compiler.target>
 
-        <spring.boot.version>2.0.4.RELEASE</spring.boot.version>
         <spring.cloud.version>Finchley.SR1</spring.cloud.version>
 
         <powermock.version>1.7.3</powermock.version>
@@ -42,16 +47,6 @@
     <dependencyManagement>
 
         <dependencies>
-
-            <!-- Base Spring Boot -->
-
-            <dependency>
-                <groupId>org.springframework.boot</groupId>
-                <artifactId>spring-boot-dependencies</artifactId>
-                <version>${spring.boot.version}</version>
-                <type>pom</type>
-                <scope>import</scope>
-            </dependency>
 
             <!-- Cloud -->
 
