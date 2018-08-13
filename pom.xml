@@ -11,7 +11,7 @@
 
     <groupId>com.chumbok</groupId>
     <artifactId>chumbok-starter-parent</artifactId>
-    <version>1.0.1-SNAPSHOT</version>
+    <version>1.0.1</version>
     <packaging>pom</packaging>
 
     <name>chumbok-starter-parent</name>
@@ -24,6 +24,7 @@
         <maven.compiler.source>${java.version}</maven.compiler.source>
         <maven.compiler.target>${java.version}</maven.compiler.target>
 
+        <spring.boot.version>2.0.4.RELEASE</spring.boot.version>
         <spring.cloud.version>Finchley.SR1</spring.cloud.version>
 
         <powermock.version>1.7.3</powermock.version>
@@ -44,6 +45,7 @@
         <docker-maven-plugin.version>1.1.1</docker-maven-plugin.version>
     </properties>
 
+
     <dependencyManagement>
 
         <dependencies>
@@ -59,12 +61,6 @@
             </dependency>
 
             <!-- Test dependencies -->
-
-            <dependency>
-                <groupId>org.springframework.boot</groupId>
-                <artifactId>spring-boot-starter-test</artifactId>
-                <scope>test</scope>
-            </dependency>
 
             <dependency>
                 <groupId>org.springframework.security</groupId>
@@ -108,12 +104,6 @@
             </dependency>
 
             <!-- Runtime dependencies -->
-
-            <dependency>
-                <groupId>org.springframework.boot</groupId>
-                <artifactId>spring-boot-devtools</artifactId>
-                <scope>runtime</scope>
-            </dependency>
 
             <dependency>
                 <groupId>com.h2database</groupId>
@@ -278,7 +268,7 @@
                     <artifactId>docker-maven-plugin</artifactId>
                     <version>${docker-maven-plugin.version}</version>
                     <configuration>
-                        <imageName>mmahmood/${project.artifactId}</imageName>
+                        <imageName>chumbok/${project.artifactId}</imageName>
                         <baseImage>java:8</baseImage>
                         <entryPoint>["java", "-jar", "/${project.build.finalName}.jar", "-Xdebug
                             -Xrunjdwp:server=y,transport=dt_socket,suspend=n"]
