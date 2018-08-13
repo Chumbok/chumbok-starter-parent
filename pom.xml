@@ -11,7 +11,7 @@
 
     <groupId>com.chumbok</groupId>
     <artifactId>chumbok-starter-parent</artifactId>
-    <version>1.0.2-SNAPSHOT</version>
+    <version>1.0.0</version>
     <packaging>pom</packaging>
 
     <name>chumbok-starter-parent</name>
