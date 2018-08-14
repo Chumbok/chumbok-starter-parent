@@ -17,6 +17,12 @@
     <name>chumbok-starter-parent</name>
     <description>Chumbok IT starter project pom, which give you all basic dependencies.</description>
 
+    <scm>
+        <url>https://github.com/ChumbokIT/chumbok-starter-parent</url>
+        <connection>scm:git:https://github.com/ChumbokIT/${project.artifactId}.git</connection>
+        <developerConnection>scm:git:https://github.com/ChumbokIT/${project.artifactId}.git</developerConnection>
+    </scm>
+
     <properties>
         <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
         <project.reporting.outputEncoding>UTF-8</project.reporting.outputEncoding>
@@ -126,12 +132,6 @@
 
         <pluginManagement>
             <plugins>
-
-                <plugin>
-                    <groupId>org.springframework.boot</groupId>
-                    <artifactId>spring-boot-maven-plugin</artifactId>
-                    <version>${spring.boot.version}</version>
-                </plugin>
 
                 <plugin>
                     <groupId>org.codehaus.mojo</groupId>
@@ -297,6 +297,24 @@
             </plugins>
 
         </pluginManagement>
+
+        <plugins>
+
+            <plugin>
+                <groupId>org.springframework.boot</groupId>
+                <artifactId>spring-boot-maven-plugin</artifactId>
+                <version>${spring.boot.version}</version>
+            </plugin>
+
+            <plugin>
+                <groupId>org.apache.maven.plugins</groupId>
+                <artifactId>maven-release-plugin</artifactId>
+                <configuration>
+                    <tagNameFormat>${project.version}</tagNameFormat>
+                </configuration>
+            </plugin>
+
+        </plugins>
 
     </build>
 
