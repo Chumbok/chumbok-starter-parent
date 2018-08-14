@@ -306,14 +306,6 @@
                 <version>${spring.boot.version}</version>
             </plugin>
 
-            <plugin>
-                <groupId>org.apache.maven.plugins</groupId>
-                <artifactId>maven-release-plugin</artifactId>
-                <configuration>
-                    <tagNameFormat>${project.version}</tagNameFormat>
-                </configuration>
-            </plugin>
-
         </plugins>
 
     </build>
