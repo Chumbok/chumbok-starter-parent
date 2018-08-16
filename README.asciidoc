@@ -1,1 +1,12 @@
 # Chumbok Starter Parent
+
+## How to use
+```
+<parent>
+	<groupId>com.chumbok</groupId>
+	<artifactId>chumbok-starter-parent</artifactId>
+    <version>1.0.0</version>
+</parent>
+```
+
+## See example project: https://github.com/ChumbokIT/chumbok-starter-parent-example-project[chumbok-starter-parent-example-project]
