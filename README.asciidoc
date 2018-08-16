@@ -1,6 +1,9 @@
 # Chumbok Starter Parent
 
 ## How to use
+
+Add following in your project.
+
 ```
 <parent>
 	<groupId>com.chumbok</groupId>
@@ -9,4 +12,40 @@
 </parent>
 ```
 
-## See example project: https://github.com/ChumbokIT/chumbok-starter-parent-example-project[chumbok-starter-parent-example-project]
+Add JitPack repository.
+
+```
+<repositories>
+    <repository>
+        <id>jitpack.io</id>
+        <url>https://jitpack.io</url>
+    </repository>
+</repositories>
+```
+
+### See example project:
+https://github.com/ChumbokIT/chumbok-starter-parent-example-project[chumbok-starter-parent-example-project]
+
+
+## How to release new version
+```
+git clone https://github.com/ChumbokIT/chumbok-starter-parent.git
+cd chumbok-starter-parent
+# Make changes.
+mvn release:prepare
+```
+
+## How to get newly released artifact
+1. Go to https://jitpack.io/#com.chumbok/chumbok-starter-parent/
+2. Click 'lookup' button
+3. Click 'Get it!' button. It will build the artifact.
+4. Scroll the page, you will see how like following-
+
+```
+<dependency>
+    <groupId>com.chumbok</groupId>
+	<artifactId>chumbok-starter-parent</artifactId>
+	<version>1.0.0</version>
+</dependency>
+
+```
