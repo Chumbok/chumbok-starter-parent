@@ -33,6 +33,8 @@
         <spring.boot.version>2.0.4.RELEASE</spring.boot.version>
         <spring.cloud.version>Finchley.SR1</spring.cloud.version>
 
+        <testable-common.version>1.0.0</testable-common.version>
+
         <powermock.version>1.7.3</powermock.version>
         <rest-assured.version>3.0.6</rest-assured.version>
         <hamcrest-library.version>1.3</hamcrest-library.version>
@@ -49,6 +51,7 @@
 
         <sonar-maven-plugin.version>3.2</sonar-maven-plugin.version>
         <docker-maven-plugin.version>1.1.1</docker-maven-plugin.version>
+
     </properties>
 
 
@@ -64,6 +67,13 @@
                 <version>${spring.cloud.version}</version>
                 <type>pom</type>
                 <scope>import</scope>
+            </dependency>
+
+            <!-- Testable common -->
+            <dependency>
+                <groupId>com.chumbok</groupId>
+                <artifactId>testable-common</artifactId>
+                <version>${testable-common.version}</version>
             </dependency>
 
             <!-- Test dependencies -->
