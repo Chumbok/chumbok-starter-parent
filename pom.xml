@@ -34,6 +34,7 @@
         <spring.cloud.version>Finchley.SR1</spring.cloud.version>
 
         <testable-common.version>1.0.0</testable-common.version>
+        <jjwt.version>0.9.1</jjwt.version>
 
         <powermock.version>1.7.3</powermock.version>
         <rest-assured.version>3.0.6</rest-assured.version>
@@ -74,6 +75,13 @@
                 <groupId>com.chumbok</groupId>
                 <artifactId>testable-common</artifactId>
                 <version>${testable-common.version}</version>
+            </dependency>
+
+            <!-- JWT -->
+            <dependency>
+                <groupId>io.jsonwebtoken</groupId>
+                <artifactId>jjwt</artifactId>
+                <version>${jjwt.version}</version>
             </dependency>
 
             <!-- Test dependencies -->
