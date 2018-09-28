@@ -10,14 +10,14 @@
 
     <groupId>com.chumbok</groupId>
     <artifactId>chumbok-starter-parent</artifactId>
-    <version>1.0.1-SNAPSHOT</version>
+    <version>1.1.1-SNAPSHOT</version>
     <packaging>pom</packaging>
 
     <name>chumbok-starter-parent</name>
     <description>Chumbok IT starter project pom, which give you all basic dependencies.</description>
 
     <scm>
-        <url>https://github.com/ChumbokIT/chumbok-starter-parent</url>
+        <url>https://github.com/ChumbokIT/${project.artifactId}</url>
         <connection>scm:git:https://github.com/ChumbokIT/${project.artifactId}.git</connection>
         <developerConnection>scm:git:https://github.com/ChumbokIT/${project.artifactId}.git</developerConnection>
       <tag>HEAD</tag>
@@ -30,7 +30,7 @@
         <maven.compiler.source>${java.version}</maven.compiler.source>
         <maven.compiler.target>${java.version}</maven.compiler.target>
 
-        <spring.boot.version>2.0.4.RELEASE</spring.boot.version>
+        <spring.boot.version>2.0.5.RELEASE</spring.boot.version>
         <spring.cloud.version>Finchley.SR1</spring.cloud.version>
 
         <testable-common.version>1.0.0</testable-common.version>
@@ -97,6 +97,7 @@
             <dependency>
                 <groupId>org.springframework.security</groupId>
                 <artifactId>spring-security-test</artifactId>
+                <version>${spring-security.version}</version>
                 <scope>test</scope>
                 <exclusions>
                     <exclusion>
@@ -140,12 +141,14 @@
             <dependency>
                 <groupId>com.h2database</groupId>
                 <artifactId>h2</artifactId>
+                <version>${h2.version}</version>
                 <scope>runtime</scope>
             </dependency>
 
             <dependency>
                 <groupId>mysql</groupId>
                 <artifactId>mysql-connector-java</artifactId>
+                <version>${mysql.version}</version>
                 <scope>runtime</scope>
             </dependency>
 
@@ -262,6 +265,23 @@
                                 </sources>
                             </configuration>
                         </execution>
+
+                        <!-- Copy integration-test resources to target/test-classes-->
+                        <execution>
+                            <id>add-resource</id>
+                            <phase>generate-resources</phase>
+                            <goals>
+                                <goal>add-resource</goal>
+                            </goals>
+                            <configuration>
+                                <resources>
+                                    <resource>
+                                        <directory>src/integration-test/resources</directory>
+                                        <targetPath>../test-classes</targetPath>
+                                    </resource>
+                                </resources>
+                            </configuration>
+                        </execution>
                     </executions>
                 </plugin>
 
@@ -295,10 +315,7 @@
                     <version>${docker-maven-plugin.version}</version>
                     <configuration>
                         <imageName>chumbok/${project.artifactId}</imageName>
-                        <baseImage>java:8</baseImage>
-                        <entryPoint>["java", "-jar", "/${project.build.finalName}.jar", "-Xdebug
-                            -Xrunjdwp:server=y,transport=dt_socket,suspend=n"]
-                        </entryPoint>
+                        <dockerDirectory>${project.basedir}</dockerDirectory>
                         <resources>
                             <resource>
                                 <targetPath>/</targetPath>
@@ -330,6 +347,14 @@
                 <groupId>org.springframework.boot</groupId>
                 <artifactId>spring-boot-maven-plugin</artifactId>
                 <version>${spring.boot.version}</version>
+                <executions>
+                    <execution>
+                        <goals>
+                            <goal>build-info</goal>
+                            <goal>repackage</goal>
+                        </goals>
+                    </execution>
+                </executions>
             </plugin>
 
         </plugins>
