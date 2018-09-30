@@ -5,15 +5,15 @@
     <parent>
         <groupId>org.springframework.boot</groupId>
         <artifactId>spring-boot-dependencies</artifactId>
-        <version>2.0.4.RELEASE</version>
+        <version>2.0.5.RELEASE</version>
     </parent>
 
     <groupId>com.chumbok</groupId>
-    <artifactId>chumbok-spring-boot-parent</artifactId>
+    <artifactId>chumbok-starter-parent</artifactId>
     <version>3.0.0</version>
     <packaging>pom</packaging>
 
-    <name>chumbok-spring-boot-parent</name>
+    <name>chumbok-starter-parent</name>
     <description>Chumbok IT starter project pom, which give you all basic dependencies.</description>
 
     <scm>
@@ -25,7 +25,7 @@
 
     <issueManagement>
         <system>Github</system>
-        <url>https://github.com/ChumbokIT/chumbok-spring-boot-parent/issues</url>
+        <url>https://github.com/ChumbokIT/chumbok-starter-parent/issues</url>
     </issueManagement>
 
     <properties>
