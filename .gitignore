@@ -62,4 +62,5 @@ fabric.properties
 .idea/httpRequests
 
 .idea/
-chumbok-spring-boot-parent.iml
+chumbok-starter-parent.iml
+target/
