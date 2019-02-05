@@ -10,7 +10,7 @@
 
     <groupId>com.chumbok</groupId>
     <artifactId>chumbok-starter-parent</artifactId>
-    <version>3.0.0</version>
+    <version>3.1.0</version>
     <packaging>pom</packaging>
 
     <name>chumbok-starter-parent</name>
@@ -59,6 +59,7 @@
         <sonar-maven-plugin.version>3.2</sonar-maven-plugin.version>
         <docker-maven-plugin.version>1.1.1</docker-maven-plugin.version>
 
+        <owasp-dependency-check-maven.version>4.0.2</owasp-dependency-check-maven.version>
     </properties>
 
 
@@ -343,6 +344,19 @@
                             <phase>deploy</phase>
                             <goals>
                                 <goal>build</goal>
+                            </goals>
+                        </execution>
+                    </executions>
+                </plugin>
+
+                <plugin>
+                    <groupId>org.owasp</groupId>
+                    <artifactId>dependency-check-maven</artifactId>
+                    <version>${owasp-dependency-check-maven.version}</version>
+                    <executions>
+                        <execution>
+                            <goals>
+                                <goal>check</goal>
                             </goals>
                         </execution>
                     </executions>
