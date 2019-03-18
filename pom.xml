@@ -10,7 +10,7 @@
 
     <groupId>com.chumbok</groupId>
     <artifactId>chumbok-starter-parent</artifactId>
-    <version>5.0.0</version>
+    <version>5.0.1-SNAPSHOT</version>
     <packaging>pom</packaging>
 
     <name>chumbok-starter-parent</name>
@@ -20,7 +20,7 @@
         <url>https://github.com/ChumbokIT/${project.artifactId}</url>
         <connection>scm:git:https://github.com/ChumbokIT/${project.artifactId}.git</connection>
         <developerConnection>scm:git:https://github.com/ChumbokIT/${project.artifactId}.git</developerConnection>
-      <tag>5.0.0</tag>
+      <tag>HEAD</tag>
     </scm>
 
     <issueManagement>
