@@ -44,7 +44,7 @@
 
         <mockito-core.version>2.24.0</mockito-core.version>
         <rest-assured.version>3.3.0</rest-assured.version>
-        <hamcrest-library.version>2.1</hamcrest-library.version>
+        <hamcrest.version>2.1</hamcrest.version>
         <pitest-maven.version>1.4.5</pitest-maven.version>
 
         <skipTests>false</skipTests>
@@ -115,8 +115,8 @@
             <!-- This will get hamcrest-core automatically -->
             <dependency>
                 <groupId>org.hamcrest</groupId>
-                <artifactId>hamcrest-library</artifactId>
-                <version>${hamcrest-library.version}</version>
+                <artifactId>hamcrest</artifactId>
+                <version>${hamcrest.version}</version>
                 <scope>test</scope>
             </dependency>
 
